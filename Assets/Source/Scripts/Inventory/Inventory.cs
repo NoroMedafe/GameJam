@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
     }
 
     public void PutItem(ResourceData resource)
-    {
+    { 
         for (int i = 0; i < MAX_ITEM_COUNT; i++)
         {
             if (_items[i].IsFilled)

@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private float _lifetime;
+    private float _borntime;
 
     private bool _isShoot = false;
-   public void Shoot(Vector3 person, float Force)
+
+    private void Start()
+    {
+        _borntime = Time.time;
+    }
+    public void Shoot(Vector3 person, float Force)
     {
 
         var heading = (person - transform.position);
@@ -21,13 +26,14 @@ public class EnemyBullet : MonoBehaviour
     }
     private void Update()
     {
-        if (_isShoot)
+        if (!_isShoot)
+            return;
+
+        if (Time.time >= _borntime + _lifetime)
         {
-            if (_rigidbody2D.velocity.magnitude == 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
+            
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
