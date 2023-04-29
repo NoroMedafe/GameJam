@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof (Rigidbody2D))]
@@ -17,8 +15,18 @@ public class Player : MonoBehaviour
         _input = GetComponent<InputSystem>();
     }
 
+    private InputSystem _inputSystem;
+
+    private void Awake()
+    {
+        _inputSystem = GetComponent<InputSystem>();
+
+    }
+
     private void FixedUpdate()
     {
+
         _rigidbody.MovePosition(_rigidbody.position + _input.MoveDirection * _speed * Time.fixedDeltaTime);
+        //_rigidbody.velocity = _inputSystem.MoveDirection * _speed;
     }
 }
