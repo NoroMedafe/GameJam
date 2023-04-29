@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class ExhaustibleResourceSource : a_ResourceSource
+public class ExhaustibleResourceSource : a_ResourceSource, IPickable
 {
     [SerializeField] private int _resourceCount;
     [SerializeField] private TMP_Text _countText;
@@ -11,14 +11,15 @@ public class ExhaustibleResourceSource : a_ResourceSource
         _countText.text = _resourceCount.ToString();
     }
 
-    public override void Take()
+    public override ResourceData Take()
     {
         if (_resourceCount <= 0)
-            return;
+            return null;
 
         _resourceCount--;
         UpdateText();
 
-        Debug.Log("Wow!");
+        return _resourceData;
     }
+
 }
