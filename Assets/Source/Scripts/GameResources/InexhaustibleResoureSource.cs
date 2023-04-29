@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-internal class InexhaustibleResoureSource : a_ResourceSource
+internal class InexhaustibleResoureSource : a_ResourceSource, IPickable
 {
-    public override void Take()
+    public override ResourceData Take()
     {
-        Debug.Log("Wow");
+        return _resourceData;
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class a_ResourceSource : MonoBehaviour
 {
-    [SerializeField] private ResourceData _itemData;
+    [SerializeField] protected ResourceData _resourceData;
 
-    public abstract void Take();
+    public abstract ResourceData Take();
 }

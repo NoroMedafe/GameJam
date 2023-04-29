@@ -2,19 +2,23 @@ using UnityEngine;
 
 public class PlayerPickZone : MonoBehaviour
 {
-
     [SerializeField] private float _radius;
+    [SerializeField] private Inventory _inventory;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            a_ResourceSource resourceSource = null;
+            IPickable resourceSource = null;
             foreach (Collider2D collider in Physics2D.OverlapCircleAll(transform.position, _radius))
             {
                 if (!collider.TryGetComponent(out resourceSource))
                     return;
             }
-            resourceSource?.Take();            
+
+            if (_inventory.CanTake())
+            {
+                _inventory.PutItem(resourceSource?.Take());
+            }
         }
     }
 
