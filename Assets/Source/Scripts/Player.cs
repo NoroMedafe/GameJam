@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
 
-        //_rigidbody.MovePosition(_rigidbody.position + _input.MoveDirection * _speed * Time.fixedDeltaTime);
+        _rigidbody.MovePosition(_rigidbody.position + _input.MoveDirection * _speed * Time.fixedDeltaTime);
         //_rigidbody.velocity = _inputSystem.MoveDirection * _speed;
     }
 }
