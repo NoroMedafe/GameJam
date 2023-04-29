@@ -16,6 +16,6 @@ public class HealthBar : Bar
 
     private void OnHealthChanged(float targetHealth)
     {
-        StartHealthChange(targetHealth, _player.Health);
+        StartBarChange(targetHealth, _player.Health);
     }
 }

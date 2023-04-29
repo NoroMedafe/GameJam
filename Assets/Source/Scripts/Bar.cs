@@ -9,7 +9,7 @@ public class Bar : MonoBehaviour
     private Coroutine _coroutine;
     private float _stepSpeed = .1f;
 
-    protected void StartHealthChange(float targetHealth, float maxHealth)
+    protected void StartBarChange(float targetHealth, float maxHealth)
     {
         if (_coroutine != null)
             StopCoroutine(_coroutine);
