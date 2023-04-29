@@ -5,19 +5,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health;
-    [SerializeField] private Bullet _bullet;
+    [SerializeField] private EnemyBullet _bullet;
     [SerializeField] private int _countBullet;
 
-    private List<Bullet> _bullets = new();
+    private List<EnemyBullet> _bullets = new();
+    private Coroutine _coroutine;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>())
         {
-            StartCoroutine(Shot());
+            if (_coroutine == null)
+            {
+                _coroutine = StartCoroutine(Shot());
+            }
+            else
+            {
+                StopCoroutine(_coroutine);
+               _coroutine = StartCoroutine(Shot());
+            }
         }
-
-       
     }
     private IEnumerator Shot()
     {
@@ -39,7 +46,15 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         _bullets.Clear();
+        _coroutine = null;
     }
-
+    public void TakeDamage(int damage)
+    {
+        _health -= damage;
+        if (_health<=0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }
