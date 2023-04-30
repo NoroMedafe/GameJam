@@ -11,12 +11,20 @@ public class PlayerPickZone : MonoBehaviour
             IPickable resourceSource = null;
             foreach (Collider2D collider in Physics2D.OverlapCircleAll(transform.position, _radius))
             {
-                if (!collider.TryGetComponent(out resourceSource))
-                    return;
+                if (collider.TryGetComponent(out resourceSource))
+                {
+                    break;
+                }
             }
+            if (resourceSource == null)
+                return;
+
+            Debug.Log("Not returned");
+
 
             if (_inventory.CanTake())
             {
+                Debug.Log("CANTAKE");
                 _inventory.PutItem(resourceSource?.Take());
             }
         }

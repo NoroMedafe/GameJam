@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(InputSystem))]
+[RequireComponent(typeof(Jeck))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 3f;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
 
     private InputSystem _input;
     private Rigidbody2D _rigidbody;
+    private Jeck _jeck;
 
     public event Action<float> ChangedHealth;
     public event Action<float> ChangedStamina;
@@ -30,11 +32,19 @@ public class Player : MonoBehaviour
 
         _rigidbody = GetComponent<Rigidbody2D>();
         _input = GetComponent<InputSystem>();
+        _jeck = GetComponent<Jeck>();
     }
 
     private void FixedUpdate()
     {
-        _rigidbody.velocity = _input.MoveDirection * _speed;
+        if (!_jeck.IsJecking)
+        { 
+            _rigidbody.velocity = _speed * _input.MoveDirection;
+        }
+        else
+        {
+            _rigidbody.velocity = _jeck.JeckVelocityBonus;
+        }
     }
 
     private float CurrentHealth
@@ -61,7 +71,7 @@ public class Player : MonoBehaviour
         ChangedStamina?.Invoke(CurrentStamina);
     }
 
-    public void MakeDAsh()
+    public void MakeDash()
     {
         LoseStamina(33.33f);
     }
