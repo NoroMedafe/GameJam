@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
+    [SerializeField] private BigEnemy _enemy;
     [SerializeField] private BoxCollider2D _collider;
 
     private Vector3 _randomPosition;

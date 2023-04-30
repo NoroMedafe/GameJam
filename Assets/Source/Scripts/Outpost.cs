@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Outpost : MonoBehaviour
 {
+    [SerializeField] private int _id;
     [SerializeField] private float _health;
     [SerializeField] private List<ResourceData> _resources;
+    [SerializeField] private QuestionsManager _questionsManager;
     private bool _isResourcesReady = true;
     public bool IsResourcesReady => _isResourcesReady;
 
@@ -52,6 +54,8 @@ public class Outpost : MonoBehaviour
             _lifeTime = Random.Range(20, 80);
             _currentLifetime = _lifeTime;
             _isrequest = false;
+
+            _questionsManager.ComptiteQuestion(_id, _resources[_idResources].Name);
         }
         else
         {
@@ -64,6 +68,8 @@ public class Outpost : MonoBehaviour
         _isrequest = true; //включает нужны ресурсы
         RandomizeResources();
         Debug.Log("нам нужны " + _resources[_idResources].Name);
+
+        _questionsManager.CreateQuestion(_id, _resources[_idResources].Name);
     }
 
     private void RandomizeResources()

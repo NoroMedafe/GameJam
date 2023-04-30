@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2986730395506026521}
   - component: {fileID: 8984457655884637262}
   - component: {fileID: 3995316920002611695}
-  - component: {fileID: 6364128224626696267}
+  - component: {fileID: 5501112356632570743}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6696945140265218382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4528302, g: 0.1986472, b: 0.1986472, a: 1}
+  m_Sprite: {fileID: -628551971, guid: 3989ea169029cb948be09a8ed3f51d94, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 8984457655884637262}
   _lifetime: 1.2
   _damage: 12
---- !u!58 &6364128224626696267
-CircleCollider2D:
+--- !u!70 &5501112356632570743
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,9 +133,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Size: {x: 0.18, y: 0.28}
+  m_Direction: 0
