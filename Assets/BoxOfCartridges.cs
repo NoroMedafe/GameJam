@@ -1,7 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Boots : MonoBehaviour
+public class BoxOfCartridges : MonoBehaviour
 {
     [SerializeField] private DialogueManager _dialogueManager;
     [SerializeField] private Dialogue _dialogue;
@@ -11,7 +12,7 @@ public class Boots : MonoBehaviour
 
     private float _elapsedTime = 0;
     private float _hintTime = 5;
-    private bool _isFoundBoots = false;
+    private bool _isFoundBullets = false;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class Boots : MonoBehaviour
 
     private void Update()
     {
-        if (_isFoundBoots)
+        if (_isFoundBullets)
             _elapsedTime += Time.deltaTime;
 
         if (_elapsedTime >= _hintTime)
@@ -31,10 +32,10 @@ public class Boots : MonoBehaviour
     {
         if (collider.TryGetComponent(out Player player) && _isDialogueStarted == false)
         {
+            _canvasGroup.alpha = 1;
+            _isFoundBullets = true;
             _dialogueManager.StartDialogue(_dialogue);
             _isDialogueStarted = true;
-            _canvasGroup.alpha = 1;
-            _isFoundBoots = true;
         }
     }
 }
