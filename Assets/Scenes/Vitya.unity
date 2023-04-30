@@ -584,6 +584,17 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &550465003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3643817939831614884, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+  m_PrefabInstance: {fileID: 2368249058631486341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1173fb34c53485048a4e4ca8da397c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &723552296
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +829,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2368249058315024382, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
   m_PrefabInstance: {fileID: 2368249058631486341}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &870792322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2368249058315024135, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+  m_PrefabInstance: {fileID: 2368249058631486341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cce25223d3fe674783955697ceb79f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1097091481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,17 +1792,33 @@ PrefabInstance:
       value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 2368249058315024135, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+      propertyPath: _animation
+      value: 
+      objectReference: {fileID: 550465003}
+    - target: {fileID: 2368249058315024135, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
       propertyPath: _jeckCooldown
-      value: 0.15
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368249058315024135, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+      propertyPath: _jeckDuration
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2368249058315024135, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
       propertyPath: _jeckStunDuration
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2368249058315024376, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+      propertyPath: _jeck
+      value: 
+      objectReference: {fileID: 870792322}
+    - target: {fileID: 2368249058315024376, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
       propertyPath: _mainCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2368249058315024378, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2368249058315024381, guid: b0b25111f26a22a48b321398a4798b5f, type: 3}
       propertyPath: m_Name
       value: Player

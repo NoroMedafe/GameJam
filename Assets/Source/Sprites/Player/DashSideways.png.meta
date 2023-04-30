@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7906d6af858bb7c4facfa55f5550b630
+guid: 5809ce999217d41499d4dac6fe5d02e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,206 +125,110 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sandTyleEdge_0
+      name: DashSideways_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad9e309d88575b44e9064ec27b04e951
-      internalID: 259607915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 32
-        height: 16
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7488ad69e8ab330409a85895b58cd28f
-      internalID: -1267378858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 10
+        y: 3
+        width: 46
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14d25b47c03476b4283fe639c8e7ea9f
-      internalID: -1242450545
+      spriteID: d8b2ba05e8e3d994fbdfa056e68512d6
+      internalID: -1525368422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sandTyleEdge_4
+      name: DashSideways_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b12900a1b4e10a4094a2c340184f538
-      internalID: -1775502294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1273a2866ee91d14383e567bfccf583c
-      internalID: 1251665427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.25, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df6528f1d37cf414e82c34723016e0a1
-      internalID: 1236210129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 59
+        y: 3
+        width: 56
+        height: 55
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a5762923d068246acc7dbfafab4552
-      internalID: 886711622
+      spriteID: f34a267b693a15d4ba51075f30bbb436
+      internalID: -523687871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sandTyleEdge_13
+      name: DashSideways_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 32
-        height: 16
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae6effc5a27a30c40a4db690427c04a0
-      internalID: -1451938612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sandTyleEdge_15
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
+        x: 118
+        y: 3
+        width: 69
+        height: 55
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58d43937be03c90498023d2422e8c13c
-      internalID: 2100728461
+      spriteID: 3110fc331826c634ebb55d0831feb310
+      internalID: -1760108333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashSideways_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63181d97dca07d14e8fa1efc18a6a75a
+      internalID: -1595726588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashSideways_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 3
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72618a750e250748b028fe6d7c8fbde
+      internalID: 615343786
       vertices: []
       indices: 
       edges: []
@@ -340,22 +244,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sandTyleEdge_15: 2100728461
-      sandTyleEdge_3: -1242450545
-      sandTyleEdge_10: -197574421
-      sandTyleEdge_9: 1236210129
-      sandTyleEdge_8: 1092987910
-      sandTyleEdge_14: -700118250
-      sandTyleEdge_13: -1451938612
-      sandTyleEdge_1: -1267378858
-      sandTyleEdge_12: 886711622
-      sandTyleEdge_6: -1690891150
-      sandTyleEdge_7: 1251665427
-      sandTyleEdge_0: 259607915
-      sandTyleEdge_2: -218002439
-      sandTyleEdge_5: 126543332
-      sandTyleEdge_4: -1775502294
-      sandTyleEdge_11: -709485423
+      DashSideways_0: -1525368422
+      DashSideways_1: -523687871
+      DashSideways_2: 1614098520
+      DashSideways_3: -1760108333
+      DashSideways_4: -1595726588
+      DashSideways_5: 615343786
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
