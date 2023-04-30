@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private BigEnemy _enemy;
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private BoxCollider2D _collider;
 
     private Vector3 _randomPosition;
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         RandomizePosition();
-        _delay = Random.Range(20f, 40f);
+        _delay = Random.Range(10f, 20f);
        
     }
 

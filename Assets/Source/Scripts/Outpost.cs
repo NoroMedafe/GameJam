@@ -19,7 +19,7 @@ public class Outpost : MonoBehaviour
     private void Start()
     {
         
-        _lifeTime = Random.Range(20, 80);
+        _lifeTime = Random.Range(30, 120);
         _currentLifetime = _lifeTime;
     }
 

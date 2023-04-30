@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Res4
   m_EditorClassIdentifier: 
   _id: 3
-  _name: Res4
-  _icon: {fileID: 21300000, guid: aa374cc637b2b7e49969c990e2134328, type: 3}
+  _name: "\u041F\u0443\u043B\u0438"
+  _icon: {fileID: 21300000, guid: 65d2cd8ca79640441b34060740767185, type: 3}
