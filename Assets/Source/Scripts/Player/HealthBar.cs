@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class HealthBar : Bar
 {
-    [SerializeField] private Player _player;
+    private Player _player;
 
     private void OnEnable()
     {
+        _player = FindObjectOfType<Player>();
         _player.ChangedHealth += OnHealthChanged;
     }
 

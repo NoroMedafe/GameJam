@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 3f;
+    [SerializeField] private float _staminaRegenSpeed;
 
     private float _maxHealth = 100;
     private float _minHealth = 0;
@@ -37,8 +38,15 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (CurrentStamina < 100)
+        {
+            CurrentStamina += _staminaRegenSpeed * Time.fixedDeltaTime;
+            ChangedStamina?.Invoke(CurrentStamina);
+        }
+
+
         if (!_jeck.IsJecking)
-        { 
+        {
             _rigidbody.velocity = _speed * _input.MoveDirection;
         }
         else
@@ -52,7 +60,7 @@ public class Player : MonoBehaviour
         get => _currentHealth;
         set => _currentHealth = Mathf.Clamp(value, _minHealth, _maxHealth);
     }
-    
+
     private float CurrentStamina
     {
         get => _currenStamina;
@@ -65,14 +73,21 @@ public class Player : MonoBehaviour
         ChangedHealth?.Invoke(CurrentHealth);
     }
 
-    public void LoseStamina(float amount)
+    public bool IsDashAble()
+    {
+        if (CurrentStamina >= 100 / 3f)
+            return true;
+        return false;
+    }
+
+    private void LoseStamina(float amount)
     {
         CurrentStamina -= amount;
         ChangedStamina?.Invoke(CurrentStamina);
     }
 
-    public void MakeDash()
+    public void LoseStaminaForDash()
     {
-        LoseStamina(33.33f);
+        LoseStamina(100 / 3f);
     }
 }

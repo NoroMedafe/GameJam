@@ -19,12 +19,9 @@ public class PlayerPickZone : MonoBehaviour
             if (resourceSource == null)
                 return;
 
-            Debug.Log("Not returned");
-
 
             if (_inventory.CanTake())
             {
-                Debug.Log("CANTAKE");
                 _inventory.PutItem(resourceSource?.Take());
             }
         }
