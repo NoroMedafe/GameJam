@@ -15,19 +15,42 @@ public class PlayerAnimations : MonoBehaviour
 
     public void MoveLeft()
     {
-        _animator.SetTrigger("OnMoveHorizontal");
+        _animator.SetBool("MoveHorizontal", true);
+        _animator.SetBool("MoveUp", false);
+        _animator.SetBool("MoveDown", false);
+
         _spriteRenderer.flipX = true;
     }
 
     public void MoveRight()
     {
-        _animator.SetTrigger("OnMoveHorizontal");
+        _animator.SetBool("MoveHorizontal", true);
+        _animator.SetBool("MoveUp", false);
+        _animator.SetBool("MoveDown", false);
+        
         _spriteRenderer.flipX = false;
+    }
+
+    public void MoveUp()
+    {
+        _animator.SetBool("MoveHorizontal", false);
+        _animator.SetBool("MoveUp", true);
+        _animator.SetBool("MoveDown", false);
+    }
+
+    public void MoveDown()
+    {
+        _animator.SetBool("MoveHorizontal", false);
+        _animator.SetBool("MoveUp", false);
+        _animator.SetBool("MoveDown", true);
     }
 
     public void Stop()
     {
         _animator.SetTrigger("OnStop");
+        _animator.SetBool("MoveHorizontal", false);
+        _animator.SetBool("MoveUp", false);
+        _animator.SetBool("MoveDown", false);
         _spriteRenderer.flipX = false;
     }
 

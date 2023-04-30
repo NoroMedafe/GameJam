@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class Jeck : MonoBehaviour
 {
+    [SerializeField] private AudioRandomizer _dashSounds;
+    [SerializeField] private AudioSource _audioSource;
+
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _jeckForce;
     [SerializeField] private InputSystem _inputSystem;
@@ -74,6 +77,9 @@ public class Jeck : MonoBehaviour
             if (!_player.IsDashAble())
                 return;
         }
+
+        _audioSource.clip = _dashSounds.PickRandom();
+        _audioSource.Play();
 
         _lastJeck = Time.time;
         _jeckDirection = _inputSystem.GetCursorDirection(transform).normalized;        

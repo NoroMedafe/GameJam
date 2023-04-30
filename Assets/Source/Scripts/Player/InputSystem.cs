@@ -25,13 +25,21 @@ public class InputSystem : MonoBehaviour
 
         if (!_jeck.IsJecking)
         {
-            if (_moveDirection.x < 0)
+            if (_moveDirection.x <= -0.5)
             {
                 _animations.MoveLeft();
             }
-            else if (_moveDirection.x > 0)
+            else if (_moveDirection.x >= 0.5)
             {
                 _animations.MoveRight();
+            }
+            else if (_moveDirection.y <= -0.5)
+            {
+                _animations.MoveUp();
+            }
+            else if (_moveDirection.y >= 0.5)
+            {
+                _animations.MoveDown();
             }
             else if (_moveDirection.y == 0)
             {

@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _staminaRegenSpeed;
 
+    [SerializeField] private AudioSource _stepsAudioSource;
+    [SerializeField] private AudioRandomizer _sandStepSounds;
+
     private float _maxHealth = 100;
     private float _minHealth = 0;
     private float _currentHealth;
@@ -26,6 +29,8 @@ public class Player : MonoBehaviour
     public float Health => _maxHealth;
     public float Stamina => _maxStamina;
 
+    private bool _isMoving;
+
     private void Start()
     {
         CurrentHealth = _maxHealth;
@@ -38,6 +43,16 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if (_isMoving)
+        {
+            if (!_stepsAudioSource.isPlaying)
+            {
+                _stepsAudioSource.clip = _sandStepSounds.PickRandom();
+                _stepsAudioSource.Play();
+            }
+        }    
+
         if (CurrentStamina < 100)
         {
             CurrentStamina += _staminaRegenSpeed * Time.fixedDeltaTime;
@@ -48,10 +63,20 @@ public class Player : MonoBehaviour
         if (!_jeck.IsJecking)
         {
             _rigidbody.velocity = _speed * _input.MoveDirection;
+            if (_rigidbody.velocity.magnitude != 0)
+            {
+                _isMoving = true;
+                
+            }
+            else
+            {
+                _isMoving = false;
+            }
         }
         else
         {
             _rigidbody.velocity = _jeck.JeckVelocityBonus;
+            _isMoving = false;
         }
     }
 
