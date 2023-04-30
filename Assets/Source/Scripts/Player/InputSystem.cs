@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
-    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private PlayerAnimations _animations;
+    [SerializeField] private Jeck _jeck;
+
     public static string Horizontal = "Horizontal";
     public static string Vertical = "Vertical";
 
@@ -13,12 +15,37 @@ public class InputSystem : MonoBehaviour
     private Vector2 _mousePosition;
     public Vector2 MousePosition => _mousePosition;
 
-   
+
+
     void Update()
     {
        _moveDirection.x = Input.GetAxis(Horizontal);
        _moveDirection.y = Input.GetAxis(Vertical);
-       _mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+       _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (!_jeck.IsJecking)
+        {
+            if (_moveDirection.x <= -0.5)
+            {
+                _animations.MoveLeft();
+            }
+            else if (_moveDirection.x >= 0.5)
+            {
+                _animations.MoveRight();
+            }
+            else if (_moveDirection.y <= -0.5)
+            {
+                _animations.MoveUp();
+            }
+            else if (_moveDirection.y >= 0.5)
+            {
+                _animations.MoveDown();
+            }
+            else if (_moveDirection.y == 0)
+            {
+                _animations.Stop();
+            }
+        }
 
     }
     public Vector2 GetCursorDirection(Transform transform)

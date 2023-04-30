@@ -3,7 +3,13 @@ using UnityEngine;
 public class PlayerPickZone : MonoBehaviour
 {
     [SerializeField] private float _radius;
-    [SerializeField] private Inventory _inventory;
+    private Inventory _inventory;
+
+
+    private void Start()
+    {
+        _inventory = FindObjectOfType<Inventory>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))

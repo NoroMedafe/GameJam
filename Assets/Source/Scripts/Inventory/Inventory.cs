@@ -4,6 +4,11 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private InventorySlot[] _items = new InventorySlot[MAX_ITEM_COUNT];
     [SerializeField] private ResourcePickup _pickupPrefab;
+
+    [SerializeField] private AudioRandomizer _pickupSounds;
+    [SerializeField] private AudioSource _pickupSource;
+
+
     private Player _player;
 
     private const int MAX_ITEM_COUNT = 2;
@@ -43,6 +48,10 @@ public class Inventory : MonoBehaviour
         {
             if (_items[i].IsFilled)
                 continue;
+
+            _pickupSource.clip = _pickupSounds.PickRandom();
+            _pickupSource.Play();
+
             _items[i].Put(resource);
             return;
         }
