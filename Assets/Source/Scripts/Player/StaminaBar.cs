@@ -15,11 +15,6 @@ public class StaminaBar : Bar
         _player.ChangedStamina -= OnStaminaChanged;
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void OnStaminaChanged(float targetStamina)
     {
         StartBarChange(targetStamina, _player.Stamina);

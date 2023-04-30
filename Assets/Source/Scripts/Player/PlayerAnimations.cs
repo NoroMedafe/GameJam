@@ -57,13 +57,11 @@ public class PlayerAnimations : MonoBehaviour
     public void StartJeckLeft()
     {
         _animator.SetBool("IsDashing", true);
-        _animator.SetTrigger("OnDash");
         _spriteRenderer.flipX = true;
     }
     public void StartJeckRight()
     {
         _animator.SetBool("IsDashing", true);
-        _animator.SetTrigger("OnDash");
         _spriteRenderer.flipX = false;
     }
 
