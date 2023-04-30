@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     private float CurrentStamina
     {
         get => _currenStamina;
-        set => _currenStamina = Mathf.Clamp(value, _minHealth, _maxStamina);
+        set => _currenStamina = Mathf.Clamp(value, _minStamina, _maxStamina);
     }
 
     public void TakeDamage(float damage)

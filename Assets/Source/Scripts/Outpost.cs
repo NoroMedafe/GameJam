@@ -15,7 +15,7 @@ public class Outpost : MonoBehaviour
     private void Update()
     {
         _currentLifetime += Time.deltaTime;
-        if (_lifeTime<=0)
+        if (_currentLifetime >= _lifeTime)
         {
             if (!_isrequest)
             {
@@ -28,6 +28,8 @@ public class Outpost : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
+            _currentLifetime = 0;
         }
     }
     public void ReplenishmentResources()
@@ -38,6 +40,6 @@ public class Outpost : MonoBehaviour
     }
     public void ResourceRequest()
     {
-        _isrequest = true;
+        _isrequest = true; //включает нужны ресурсы
     }
 }
