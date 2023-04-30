@@ -10,7 +10,6 @@ public class Menu : MonoBehaviour
 
     public void QuitGame()
     {
-        print("Exit");
         Application.Quit();
     }
 }
