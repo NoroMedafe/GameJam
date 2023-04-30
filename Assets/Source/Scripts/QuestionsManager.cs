@@ -11,6 +11,8 @@ public class QuestionsManager : MonoBehaviour
     public void CreateQuestion(int idOutpost, string nameRecource)
     {
         Question question = Instantiate(_question);
+        question.transform.parent = gameObject.transform;
+        question.transform.localScale = new Vector3(1, 1, 1);
         question.CreateQuestion(idOutpost, nameRecource);
         _questionList.Add(question);
     }

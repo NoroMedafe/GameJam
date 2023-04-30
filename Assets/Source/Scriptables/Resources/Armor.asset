@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf46d0f486c57354388b1831de5d1a3b, type: 3}
-  m_Name: Armor
+  m_Name: Res1
   m_EditorClassIdentifier: 
   _id: 0
-  _name: Armor
-  _icon: {fileID: 21300000, guid: a51bc8f0a3561854a99ea6807c4cb4c6, type: 3}
+  _name: "\u0411\u0440\u043E\u043D\u044F"
+  _icon: {fileID: 21300000, guid: 578b3f27c7515684d8e3a6f6e9770f51, type: 3}

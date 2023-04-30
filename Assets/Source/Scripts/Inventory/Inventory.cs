@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
     }
 
     public void PutItem(ResourceData resource)
-    { 
+    {
         for (int i = 0; i < MAX_ITEM_COUNT; i++)
         {
             if (_items[i].IsFilled)
@@ -64,6 +64,7 @@ public class Inventory : MonoBehaviour
         {
             ResourcePickup resourcePickup = Instantiate(_pickupPrefab, _player.transform.position, Quaternion.identity);
             resourcePickup.SetData(resource);
+            resourcePickup.Throw(FindObjectOfType<InputSystem>().GetCursorDirection(FindObjectOfType<Player>().transform).normalized, 500f);
         }
     }
 }

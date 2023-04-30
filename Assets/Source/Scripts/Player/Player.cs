@@ -96,6 +96,10 @@ public class Player : MonoBehaviour
     {
         CurrentHealth -= damage;
         ChangedHealth?.Invoke(CurrentHealth);
+        if (CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public bool IsDashAble()

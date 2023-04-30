@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 public class SmallEnemy : Enemy
 {
     [SerializeField] private int _health;
     [SerializeField] private int _damage;
     [SerializeField] private float _delay;
 
+    public AIDestinationSetter ai;
     private float _currentDelay;
     private bool _isReadyAttack;
     private void Update()
@@ -44,5 +45,8 @@ public class SmallEnemy : Enemy
         }
     }
 
-
+    private void Start()
+    {
+        ai.target = FindObjectOfType<Player>().transform;
+    }
 }

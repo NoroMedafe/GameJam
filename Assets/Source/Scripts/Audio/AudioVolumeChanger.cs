@@ -9,10 +9,7 @@ public class AudioVolumeChanger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            From1To2();
-        }
+       
     }
 
     public void From1To2()

@@ -17,6 +17,12 @@ public class ResourcePickup : MonoBehaviour, IPickable
         _spriteRenderer.sprite = _resourceData.Icon;
     }
 
+
+    public void Throw(Vector2 direction, float strength)
+    {
+        GetComponent<Rigidbody2D>().AddForce(direction * strength);
+    }
+
     public ResourceData Take()
     {
         Invoke(nameof(DestroyPickup), 0.01f);

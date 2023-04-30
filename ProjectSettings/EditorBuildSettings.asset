@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Vitya.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu.unity
+    guid: aceb732c4e88bf34b922a8f4f03c7532
+  - enabled: 1
+    path: Assets/Source/Map/Map.unity
+    guid: 9c329166ee48f1341b66a963eacdbd24
   m_configObjects: {}
