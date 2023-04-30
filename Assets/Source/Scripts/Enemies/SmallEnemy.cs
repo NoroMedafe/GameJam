@@ -31,8 +31,12 @@ public class SmallEnemy : Enemy
     {
         if (collision.TryGetComponent(out Player player))
         {
-            player.TakeDamage(_damage);
-            _isReadyAttack = false;
+            if (_isReadyAttack)
+            {
+                player.TakeDamage(_damage);
+                _isReadyAttack = false;
+            }
+            
         }
     }
 
