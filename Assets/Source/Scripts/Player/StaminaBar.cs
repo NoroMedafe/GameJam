@@ -2,16 +2,22 @@
 
 public class StaminaBar : Bar
 {
-    [SerializeField] Player _player;
+    Player _player;
 
     private void OnEnable()
     {
+        _player = FindObjectOfType<Player>();
         _player.ChangedStamina += OnStaminaChanged;
     }
 
     private void OnDisable()
     {
         _player.ChangedStamina -= OnStaminaChanged;
+    }
+
+    private void Update()
+    {
+        
     }
 
     private void OnStaminaChanged(float targetStamina)

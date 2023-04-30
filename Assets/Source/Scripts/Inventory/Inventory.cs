@@ -4,9 +4,15 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private InventorySlot[] _items = new InventorySlot[MAX_ITEM_COUNT];
     [SerializeField] private ResourcePickup _pickupPrefab;
-    [SerializeField] private Player _player;
+    private Player _player;
 
     private const int MAX_ITEM_COUNT = 2;
+
+
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+    }
 
     private void Update()
     {

@@ -4,9 +4,11 @@ public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _lifetime;
-    private float _borntime;
+    [SerializeField] private float _damage;
 
+    private float _borntime;   
     private bool _isShoot = false;
+
 
     private void Start()
     {
@@ -36,11 +38,14 @@ public class EnemyBullet : MonoBehaviour
         }
             
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<Player>())
-        {
 
-        }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Player player))
+        {
+            player.TakeDamage(_damage);
+            Destroy(gameObject);
+        }     
     }
+
 }

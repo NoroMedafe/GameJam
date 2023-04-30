@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 556930711701034949}
   - component: {fileID: 6981330754806431421}
   - component: {fileID: 629798629465547810}
-  - component: {fileID: 5102597536451921939}
+  - component: {fileID: 814899401973956561}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5102597536451921939
+--- !u!114 &814899401973956561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2687176883395731443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a904c227ef681a41acfa6d8efe98a1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8021001f777b79248a4d811691f78156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
