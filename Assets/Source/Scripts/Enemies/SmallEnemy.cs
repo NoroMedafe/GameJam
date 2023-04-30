@@ -12,12 +12,16 @@ public class SmallEnemy : Enemy
     private bool _isReadyAttack;
     private void Update()
     {
-        _currentDelay += Time.deltaTime;
-        if (_delay <= _currentDelay)
+        if (!_isReadyAttack)
         {
-            _currentDelay = 0;
-            _isReadyAttack = true;
+            _currentDelay += Time.deltaTime;
+            if (_delay <= _currentDelay)
+            {
+                _currentDelay = 0;
+                _isReadyAttack = true;
+            }
         }
+       
     }
     public override void TakeDamage(int damage)
     {
