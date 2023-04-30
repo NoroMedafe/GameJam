@@ -57,7 +57,11 @@ public class Jeck : MonoBehaviour
             return;
 
         if (Time.time < _lastJeck + _jeckCooldown)
+        {
+            _isJeckSequenceStoped = true;
             return;
+        }
+
 
         if (_isFirstDashInSequence)
         {
