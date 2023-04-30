@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +8,30 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _shootStrength;
     [SerializeField] private float _shotDelay;
 
+    private List<Vector2[]> _shotDirections = new List<Vector2[]>();
+    private int _currentShotDirection = 0;
+
     private float _lastShotTime;
 
     private List<EnemyBullet> _bullets = new();
     private Coroutine _coroutine;
+
+    private void Start()
+    {
+        _shotDirections.Add(new Vector2[]{
+            Vector2.up,
+            Vector2.right,
+            Vector2.down,
+            Vector2.left
+        });
+
+        _shotDirections.Add(new Vector2[]{
+            Vector2.up + Vector2.right,
+            Vector2.right + Vector2.down,
+            Vector2.down + Vector2.left,
+            Vector2.left + Vector2.up
+        });
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -27,18 +46,17 @@ public class Enemy : MonoBehaviour
     }
     private void Shot()
     {
-        Vector3[] directionsArray =
-        {
-            Vector3.up,
-            Vector3.right,
-            Vector3.down,
-            Vector3.left
-        };
 
-        foreach (Vector3 direction in directionsArray)
+        foreach (Vector2 direction in _shotDirections[_currentShotDirection])
         {
-            EnemyBullet bullet = Instantiate(_bullet, transform.position + direction, Quaternion.identity);
+            EnemyBullet bullet = Instantiate(_bullet, (Vector2)transform.position + direction, Quaternion.identity);
             bullet.Shoot(transform.position, _shootStrength);
+        }
+
+        _currentShotDirection++;
+        if (_currentShotDirection == _shotDirections.Count)
+        {
+            _currentShotDirection = 0;
         }
 
     }

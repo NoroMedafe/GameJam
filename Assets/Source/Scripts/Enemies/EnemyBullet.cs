@@ -12,16 +12,17 @@ public class EnemyBullet : MonoBehaviour
     {
         _borntime = Time.time;
     }
-    public void Shoot(Vector3 person, float Force)
+    public void Shoot(Vector2 person, float Force)
     {
 
-        var heading = (person - transform.position);
+        var heading = (person - (Vector2)transform.position);
         var distance = heading.magnitude;
         var direction = heading / distance * -1;
 
-        Vector3 jeck = direction * Force;
-        jeck.z = 0f;
-        _rigidbody2D.AddForce(jeck, ForceMode2D.Impulse);
+        Vector2 jeck = direction * Force;
+        _rigidbody2D.velocity = jeck;
+
+        //_rigidbody2D.AddForce(jeck, ForceMode2D.Impulse);
         _isShoot = true;
     }
     private void Update()
