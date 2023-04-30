@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boots : MonoBehaviour
+public class Training : MonoBehaviour
 {
     [SerializeField] private DialogueManager _dialogueManager;
     [SerializeField] private Dialogue _dialogue;
