@@ -25,7 +25,8 @@ public class QuestionsManager : MonoBehaviour
         {
             if (item.KeyQuestion == key)
             {
-                Destroy(item);
+                Destroy(item.gameObject);
+                _questionList.Remove(item);
                 break;
             }
         }

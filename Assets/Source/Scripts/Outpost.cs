@@ -8,8 +8,6 @@ public class Outpost : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private List<ResourceData> _resources;
     [SerializeField] private QuestionsManager _questionsManager;
-    private bool _isResourcesReady = true;
-    public bool IsResourcesReady => _isResourcesReady;
 
     private float _lifeTime;
     private float _currentLifetime;
@@ -36,7 +34,6 @@ public class Outpost : MonoBehaviour
 
             if (_currentLifetime <= 0)
             {
-                _isResourcesReady = false;
                 _health -= Time.deltaTime;
 
                 if (_health <= 0)
@@ -75,7 +72,6 @@ public class Outpost : MonoBehaviour
     private void RandomizeResources()
     {
         _idResources = Random.Range(0, _resources.Count);
-        _isResourcesReady = true;
-
+        
     }
 }

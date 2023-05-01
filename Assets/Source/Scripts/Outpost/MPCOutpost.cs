@@ -4,12 +4,5 @@ using UnityEngine;
 
 public class MPCOutpost : Outpost
 {
-  
-    void Update()
-    {
-        if (!IsResourcesReady)
-        {
-            //отбиваемся
-        }
-    }
+
 }
