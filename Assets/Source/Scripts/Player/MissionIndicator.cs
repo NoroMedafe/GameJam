@@ -21,8 +21,13 @@ public class MissionIndicator : MonoBehaviour
         _linkedOutpostPosition = position;
     }
 
+    public void SetResource(Sprite resourceIcon)
+    {
+        _spriteRenderer.sprite = resourceIcon;
+    }
+
     private void Update()
     {
-        transform.position = (_linkedOutpostPosition - (Vector2)_player.transform.position).normalized * _distaneFromPlayer;
+        transform.position = (Vector2)_player.transform.position + (_linkedOutpostPosition - (Vector2)_player.transform.position).normalized * _distaneFromPlayer;
     }
 }
