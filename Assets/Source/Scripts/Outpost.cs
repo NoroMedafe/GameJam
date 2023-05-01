@@ -8,6 +8,7 @@ public class Outpost : MonoBehaviour
     [SerializeField] private List<ResourceData> _resources;
     [SerializeField] private QuestionsManager _questionsManager;
 
+
     private float _lifeTime;
     private float _currentLifetime;
     private bool _isrequest = false;
@@ -45,6 +46,7 @@ public class Outpost : MonoBehaviour
 
     public void ReplenishmentResources(int idResource)
     {
+        Debug.Log(idResource + " = " + _idResources);
         if (idResource == _idResources)
         {
             _lifeTime = Random.Range(20, 80);
@@ -68,7 +70,7 @@ public class Outpost : MonoBehaviour
         RandomizeResources();
         Debug.Log("нам нужны " + _resources[_idResources].Name);
 
-        _questionsManager.CreateQuestion(_id, _resources[_idResources].Name);
+        _questionsManager.CreateQuestion(_id, _resources[_idResources].Name, _resources[_idResources].Icon, transform.position);
     }
 
     private void RandomizeResources()
