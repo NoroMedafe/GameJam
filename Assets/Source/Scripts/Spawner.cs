@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
+using Jam.Player;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
     [SerializeField] private BoxCollider2D _collider;
+    [SerializeField] private Transform _player;
 
     private Vector3 _randomPosition;
     private float _delay;
@@ -16,16 +15,20 @@ public class Spawner : MonoBehaviour
     {
         RandomizePosition();
         _delay = Random.Range(10f, 20f);
-       
+
     }
 
     void Update()
     {
         _timer += Time.deltaTime;
 
-        if (_timer>= _delay)
+        if (_timer >= _delay)
         {
-            Instantiate(_enemy, transform.position + _randomPosition,Quaternion.identity);
+            Enemy enemy = Instantiate(_enemy, transform.position + _randomPosition, Quaternion.identity);
+            if (enemy.TryGetComponent(out SmallEnemy smallEnemy))
+            {
+                smallEnemy.SetTarget(_player);
+            }
             _timer = 0;
             RandomizePosition();
         }

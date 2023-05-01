@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Jam.Player;
 public class StaminaBar : Bar
 {
     Player _player;
@@ -13,11 +13,6 @@ public class StaminaBar : Bar
     private void OnDisable()
     {
         _player.ChangedStamina -= OnStaminaChanged;
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void OnStaminaChanged(float targetStamina)

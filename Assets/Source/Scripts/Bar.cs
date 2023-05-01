@@ -4,7 +4,12 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
+    [SerializeField] private Image _image;
+    private float Fill
+    {
+        get => _image.fillAmount;
+        set => _image.fillAmount = value;
+    }
 
     private Coroutine _coroutine;
     private float _stepSpeed = .1f;
@@ -21,9 +26,9 @@ public class Bar : MonoBehaviour
     {
         targetHealth /= maxHealth;
 
-        while (_slider.value != targetHealth)
+        while (Fill != targetHealth)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, targetHealth, _stepSpeed * Time.deltaTime);
+            Fill = Mathf.MoveTowards(Fill, targetHealth, _stepSpeed * Time.deltaTime);
             yield return null;
         }
     }

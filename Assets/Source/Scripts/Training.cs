@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Jam.Player;
 
 public class Training : MonoBehaviour
 {

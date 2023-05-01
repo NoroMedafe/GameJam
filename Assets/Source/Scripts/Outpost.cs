@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +14,7 @@ public class Outpost : MonoBehaviour
     private int _idResources;
 
     private void Start()
-    {
-        
+    {       
         _lifeTime = Random.Range(30, 120);
         _currentLifetime = _lifeTime;
     }
@@ -39,6 +37,7 @@ public class Outpost : MonoBehaviour
                 if (_health <= 0)
                 {
                     Destroy(gameObject);
+                    Debug.Log($"OUTPOST {_id} IS DESTROYYYYYED!");
                 }
             }
         }
@@ -53,6 +52,9 @@ public class Outpost : MonoBehaviour
             _isrequest = false;
 
             _questionsManager.ComptiteQuestion(_id, _resources[_idResources].Name);
+
+
+            Debug.Log("YAY!");
         }
         else
         {
@@ -62,7 +64,7 @@ public class Outpost : MonoBehaviour
 
     public void ResourceRequest()
     {
-        _isrequest = true; //включает нужны ресурсы
+        _isrequest = true;
         RandomizeResources();
         Debug.Log("нам нужны " + _resources[_idResources].Name);
 

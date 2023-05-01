@@ -1,10 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] private int _damage;
+    [SerializeField] private float _lifetime = 1.2f;
+    private float _time = 0f;
+
+    private void Update()
+    {
+        _time += Time.deltaTime;
+        if (_time >= _lifetime)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnBecameInvisible()
     {
@@ -17,5 +26,7 @@ public class PlayerBullet : MonoBehaviour
         {
             enemy.TakeDamage(_damage);
         }
+
+        Destroy(gameObject);
     }
 }
