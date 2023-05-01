@@ -1,18 +1,18 @@
 using UnityEngine;
 using Jam.Player;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class MissionIndicator : MonoBehaviour
 {
+    public int Id { get; set; }
+
     [SerializeField] private float _distaneFromPlayer;
 
     private Player _player;
     private Vector2 _linkedOutpostPosition;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
-        GetComponent<SpriteRenderer>();
         _player = FindObjectOfType<Player>();
     }
 

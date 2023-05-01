@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Question : MonoBehaviour
 {
+    public int Index { get; set; }
     [SerializeField] private TMP_Text _text;
 
     private string _keyQuestion;
