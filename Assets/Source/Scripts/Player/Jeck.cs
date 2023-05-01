@@ -1,4 +1,5 @@
 using UnityEngine;
+using Jam.Player;
 
 [RequireComponent(typeof(Player))]
 public class Jeck : MonoBehaviour

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Jam.Player;
 
 public class EnemyBullet : MonoBehaviour
 {

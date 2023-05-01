@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Jam.Player;
 public class StaminaBar : Bar
 {
     Player _player;

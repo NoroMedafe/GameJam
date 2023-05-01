@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Jam.Player;
 using Pathfinding;
+using UnityEngine;
+
 public class SmallEnemy : Enemy
 {
     [SerializeField] private int _health;
@@ -11,6 +11,14 @@ public class SmallEnemy : Enemy
     public AIDestinationSetter ai;
     private float _currentDelay;
     private bool _isReadyAttack;
+
+
+    public void SetTarget(Transform transform)
+    {
+        ai.target = transform;
+    }
+
+
     private void Update()
     {
         if (!_isReadyAttack)
@@ -43,10 +51,5 @@ public class SmallEnemy : Enemy
             }
             
         }
-    }
-
-    private void Start()
-    {
-        ai.target = FindObjectOfType<Player>().transform;
     }
 }

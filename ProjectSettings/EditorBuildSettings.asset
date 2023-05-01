@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Source/Map/Map.unity
     guid: 9c329166ee48f1341b66a963eacdbd24
+  - enabled: 1
+    path: Assets/Scenes/VityaNew.unity
+    guid: 2982340c29ce93046b32d51a049ab265
   m_configObjects: {}

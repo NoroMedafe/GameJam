@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Jam.Player;
 
 public class BigEnemy : Enemy
 {

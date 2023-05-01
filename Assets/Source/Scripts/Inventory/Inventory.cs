@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Jam.Player;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private InventorySlot[] _items = new InventorySlot[MAX_ITEM_COUNT];
