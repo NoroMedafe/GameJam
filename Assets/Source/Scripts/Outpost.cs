@@ -8,6 +8,8 @@ public class Outpost : MonoBehaviour
     [SerializeField] private List<ResourceData> _resources;
     [SerializeField] private QuestionsManager _questionsManager;
 
+    private MissionArrowsManager _missionArrows;
+
     private float _lifeTime;
     private float _currentLifetime;
     private bool _isrequest = false;
@@ -17,6 +19,7 @@ public class Outpost : MonoBehaviour
     {       
         _lifeTime = Random.Range(30, 120);
         _currentLifetime = _lifeTime;
+        _missionArrows = FindObjectOfType<MissionArrowsManager>();
     }
 
     private void Update()
@@ -69,6 +72,7 @@ public class Outpost : MonoBehaviour
         Debug.Log("нам нужны " + _resources[_idResources].Name);
 
         _questionsManager.CreateQuestion(_id, _resources[_idResources].Name);
+        _missionArrows.AddMission(transform.position, _resources[_idResources].Icon);
     }
 
     private void RandomizeResources()
