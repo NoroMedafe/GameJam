@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Builds
   m_EditorClassIdentifier: 
   _id: 2
-  _name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B"
+  _name: Materials
   _icon: {fileID: 21300000, guid: 771786ebbd51f6f47863ebfa9a6631a9, type: 3}

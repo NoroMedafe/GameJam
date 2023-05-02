@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   _id: 1
-  _name: "\u0410\u043F\u0442\u0435\u0447\u043A\u0430"
+  _name: Medicines
   _icon: {fileID: 21300000, guid: 58a4bba9537c0124dbf78c32340f42d3, type: 3}

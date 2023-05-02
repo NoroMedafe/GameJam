@@ -33,7 +33,7 @@ public class MissionArrowsManager : MonoBehaviour
 
         if (listId != -1)
         {
-            Destroy(_indicators[listId]);
+            Destroy(_indicators[listId].gameObject);
             _indicators.RemoveAt(listId);
         }
     }

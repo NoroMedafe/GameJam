@@ -14,7 +14,7 @@ public class Question : MonoBehaviour
     public string KeyQuestion => _keyQuestion;
     public void CreateQuestion(int idOutpost, string nameRecource)
     {
-        _text.text = $"Ïğèíåñè {nameRecource} íà àâàíïîñò {OutpostIdToName(idOutpost)}";
+        _text.text = $"Deliver {nameRecource} to outpost in the {OutpostIdToName(idOutpost)}";
         _keyQuestion = nameRecource + idOutpost.ToString();
         Debug.Log($"Key request {_keyQuestion}");
     }
@@ -23,10 +23,10 @@ public class Question : MonoBehaviour
     {
         string result = id switch
         {
-            0 => "CÂ",
-            1 => "ŞÂ",
-            2 => "ŞÇ",
-            3 => "ÑÇ",
+            0 => "NE",
+            1 => "SE",
+            2 => "SW",
+            3 => "NW",
             _ => ""
         };
         return result;

@@ -69,7 +69,6 @@ public class Outpost : MonoBehaviour
         _isrequest = true;
         RandomizeResources();
         Debug.Log("нам нужны " + _resources[_idResources].Name);
-
         _questionsManager.CreateQuestion(_id, _resources[_idResources].Name, _resources[_idResources].Icon, transform.position);
     }
 

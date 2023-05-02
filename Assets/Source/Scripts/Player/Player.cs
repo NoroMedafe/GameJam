@@ -101,6 +101,7 @@ namespace Jam.Player
             if (CurrentHealth <= 0)
             {
                 Destroy(gameObject);
+                SceneChanger.GoToMenu();
             }
         }
 
